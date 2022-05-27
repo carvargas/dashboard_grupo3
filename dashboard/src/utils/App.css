@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:ital,wght@0,400;0,700;1,900&display=swap');
+
+*{
+    font-family: 'Open Sans';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --negro: #222222;
+    --blanco: white;
+    --grisClaro: #999999;
+    --grisOscuro: #494F51;
+    --Primary: #0CB093;
+    --categories: #333333;
+    --rosa: palevioletred;
+}
