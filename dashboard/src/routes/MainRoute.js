@@ -6,7 +6,6 @@ import ProductView from '../pages/Products/ProductView/ProductView';
 
 const MainRoute = () => {
   return (
-    <BrowserRouter>
         <Routes>
 
             <Route path='/' element={<Home />} />
@@ -16,7 +15,6 @@ const MainRoute = () => {
             <Route path='/*' element={<h1>¡Ups! No hemos encontrado esta página</h1>} />
         
         </Routes>
-    </BrowserRouter>
   )
 }
 
