@@ -6,15 +6,15 @@ import ProductView from '../pages/Products/ProductView/ProductView';
 
 const MainRoute = () => {
   return (
-        <Routes>
+    <Routes>
 
-            <Route path='/' element={<Home />} />
-            <Route path='/products' element={<ProductList />} />
-            <Route path='/products/:id' element={<ProductView />} />
-            <Route path='/products/new' element={<NewProduct />} />
-            <Route path='/*' element={<h1>¡Ups! No hemos encontrado esta página</h1>} />
-        
-        </Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/products' element={<ProductList />} />
+      <Route path='/products/:id' element={<ProductView />} />
+      <Route path='/products/new' element={<NewProduct />} />
+      <Route path='/*' element={<h1>¡Ups! No hemos encontrado esta página</h1>} />
+    
+    </Routes>
   )
 }
 

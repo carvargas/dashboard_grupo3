@@ -1,15 +1,27 @@
 .productListContainer{
-    width: 100%;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
     overflow-y: scroll;
 }
 
-nav{
-    background-color: aqua;
+.productHeader{
+    position: fixed;
+    z-index: 200;
+    width: 100%;
+    height: 72px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
 }
-    ul{
+    .productHeader ul{
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
     
         list-style: none;
@@ -22,31 +34,91 @@ nav{
     
         list-style: none;
     }
+/*spinner*/
+.cargandoProductos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+.spinner {
+    margin: 100px auto 0;
+    width: 70px;
+    text-align: center;
+}
+  .spinner > div {
+    width: 18px;
+    height: 18px;
+    background-color: #333;
+  
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  }
+  .spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+  .spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+
+  @-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+  }
+  @keyframes sk-bouncedelay {
+    0%, 80%, 100% { 
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    } 40% { 
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+    }
+  }
 
 /*body*/
 .productList{
+    margin: 15px auto;
+    margin-top: 85px;
+    width: 98%;
     display: flex;
     flex-direction: column;
     gap: 10px;
     list-style: none;
 }
     .productList > .product{
+        width: 100%;
+        min-width: 270px;
         position: relative;
+        z-index: 100;
         display: flex;
         justify-content: flex-start;
         gap: 15px;
         padding: 5px 5px;
-        width: 90%;
         background-color: rgb(41, 41, 41);
         border-radius: 15px;
         color: white;
+        cursor: pointer;
     }
-        .product > img{
+        .product > figure{
             background-color: white;
             border-radius: 15px;
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            min-width: 80px;
+            height: 80px;
+            min-height: 80px;
         }
+            figure img{
+                width: 100%;
+                height: 100%;
+                border-radius: 15px;
+                object-fit: contain;
+            }
         .product > .productDesc{
             display: flex;
             flex-direction: column;
@@ -54,6 +126,7 @@ nav{
             gap: 5px;
         }
             .productDesc > h3{
+                margin-right: 35px;
                 font-size: 15px;
             }
             .productDesc > p{

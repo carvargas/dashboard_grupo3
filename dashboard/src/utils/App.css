@@ -23,6 +23,7 @@
   .sidebar{
     display: flex;
     position: absolute;
+    z-index: 200;
     left: -296px;
     background-color: #222;
     height: 100vh;

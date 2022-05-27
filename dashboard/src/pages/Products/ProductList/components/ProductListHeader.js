@@ -3,7 +3,7 @@ import '../ProductList.css'
 
 const ProductListHeader = () => {
   return (
-    <nav>
+    <nav className="productHeader">
         <ul>
             <li><p>Productos</p></li>
             <div>

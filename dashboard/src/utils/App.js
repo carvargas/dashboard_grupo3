@@ -1,4 +1,3 @@
-
 import './App.css';
 import MainArea from '../components/MainArea';
 import Sidebar from '../components/Sidebar';
