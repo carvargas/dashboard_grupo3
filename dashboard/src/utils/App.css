@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:ital,wght@0,400;0,700;1,900&display=swap');
+
+*{
+    font-family: 'Open Sans';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --negro: #222222;
+    --blanco: white;
+    --grisClaro: #999999;
+    --grisOscuro: #494F51;
+    --Primary: #0CB093;
+    --categories: #333333;
+    --rosa: palevioletred;
+}
+
+.App{
+    display: flex;
+  }
+  
+  .sidebar{
+    display: flex;
+    position: absolute;
+    left: -296px;
+    background-color: #222;
+    height: 100vh;
+    width: 296px;
+    transition: 300ms all;
+    
+  }
+  
+  .show-menu{
+    left:0;
+  }
+  
+  .main-area{
+    display: flex;
+    background-color: #999;
+    height: 100vh;
+    width:100%;
+  }
+  
+  .menu-button{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  @media(min-width:1025px){
+    .sidebar{
+      position: relative;
+      left: 0;
+    }
+  
+    .main-area{
+      width: 100%;
+      align-self: flex-end;
+      justify-self: flex-end;
+    }
+  
+    .menu-button{
+      display: none;
+    }
+  }
