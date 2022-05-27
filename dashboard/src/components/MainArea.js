@@ -14,7 +14,6 @@ const MainArea = () => {
   return (
     <div className='main-area'>
         <button className='menu-button' onClick={handleMenu}><img src={menuImg} alt='menu'/></button>
-       <h1>MainArea</h1> 
        <ProductList/>
     </div>
   )

@@ -4,7 +4,7 @@ import ProductListHeader from './components/ProductListHeader'
 
 const ProductList = () => {
   return (
-    <div>
+    <div className='productListContainer'>
         <ProductListHeader/>
         <ProductListBody/>
     </div>
