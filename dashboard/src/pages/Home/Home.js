@@ -3,7 +3,7 @@ import {HomeHeader, Saludo} from './HomeHeader';
 import './Home.css';
 
 const Home = () => {
-
+return "hola soy home"
   return (
     <HomeContainer>
         <HomeHeader>

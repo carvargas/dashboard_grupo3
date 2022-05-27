@@ -12,13 +12,12 @@ const MainArea = () => {
         setMenu(true)
     }
   return (
-    <BrowserRouter>
+    
 
     <div className='main-area'>
         <button className='menu-button' onClick={handleMenu}><img src={menuImg} alt='menu'/></button>
         <MainRoute />
     </div>
-    </BrowserRouter>
   )
 }
 
