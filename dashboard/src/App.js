@@ -1,11 +1,17 @@
 import React from 'react';
 import './App.css';
-import ProductList from './pages/Products/ProductList/ProductList';
+import MainArea from './components/MainArea';
+import Sidebar from './components/Sidebar';
+import MenuContext from './contexts/MenuContext';
 
 function App() {
   return (
-    <div className="App">
-      <ProductList/>
+    
+    <div className='App'>
+      <MenuContext>
+        <Sidebar />
+        <MainArea />
+      </MenuContext>
     </div>
   );
 }
