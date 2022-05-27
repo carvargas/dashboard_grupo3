@@ -46,7 +46,7 @@
   }
 
   .main-area{
-    width: calc(100% - 296px);
+    width: 100%;
     align-self: flex-end;
     justify-self: flex-end;
   }

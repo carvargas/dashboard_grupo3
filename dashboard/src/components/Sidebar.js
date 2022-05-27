@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { menuContext } from '../contexts/MenuContext'
-import useOnClickOutside from '../hooks/useOnlickOutside'
+import useOnClickOutside from '../hooks/useOnClickOutside'
 
 const Sidebar = () => {
   const {menu, setMenu } = useContext(menuContext)
