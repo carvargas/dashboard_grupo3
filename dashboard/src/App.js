@@ -1,22 +1,17 @@
 
 import './App.css';
+import MainArea from './components/MainArea';
+import Sidebar from './components/Sidebar';
+import MenuContext from './contexts/MenuContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div className='App'>
+      <MenuContext>
+        <Sidebar />
+        <MainArea />
+      </MenuContext>
     </div>
   );
 }
