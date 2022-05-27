@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import NewProduct from '../pages/Products/NewProduct/NewProduct';
 import ProductList from '../pages/Products/ProductList/ProductList';
@@ -12,7 +12,45 @@ const MainRoute = () => {
             <Route path='/products' element={<ProductList />} />
             <Route path='/products/:id' element={<ProductView />} />
             <Route path='/products/new' element={<NewProduct />} />
-            <Route path='/*' element={<h1>¡Ups! No hemos encontrado esta página</h1>} />
+            <Route path='/*' element={
+              <>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+                <h1>¡Ups! No hemos encontrado esta página</h1>
+
+              </>
+            
+            } />
         
         </Routes>
   )
