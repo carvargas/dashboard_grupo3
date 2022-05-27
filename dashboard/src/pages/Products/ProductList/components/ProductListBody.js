@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import '../ProductList.css'
+import React, { useState, useEffect } from 'react';
+import '../ProductList.css';
+import rightArrow from '../../../../assets/img/rightArrow.svg';
 
 const ProductListBody = () => {
 
@@ -25,7 +26,7 @@ const ProductListBody = () => {
                 <h3>{product.nombre}</h3>
                 <p>#{product._id}</p>
             </div>
-            <button>{">"}</button>
+            <button><img src={rightArrow} alt='right arrow'></img></button>
 
           </li>
         ))}
