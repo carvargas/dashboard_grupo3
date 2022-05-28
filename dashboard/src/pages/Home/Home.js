@@ -4,14 +4,13 @@ import './Home.css';
 
 const Home = () => {
 return "hola soy home"
-  return (
-    <HomeContainer>
-        <HomeHeader>
-            <Saludo>¡Hola Olivia!</Saludo>
-        </HomeHeader>
-
-    </HomeContainer>
-  )
+  // return (
+  //   <HomeContainer>
+  //       <HomeHeader>
+  //           <Saludo>¡Hola Olivia!</Saludo>
+  //       </HomeHeader>
+  //   </HomeContainer>
+  // )
 }
 
 export default Home;
