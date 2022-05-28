@@ -1,7 +1,7 @@
 import React, { useContext} from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import menuImg from'../assets/img/menu.svg';
 import { menuContext } from '../contexts/MenuContext';
+import HeaderRoute from '../routes/HeaderRoute';
 import MainRoute from '../routes/MainRoute'
 
 const MainArea = () => {
@@ -12,12 +12,18 @@ const MainArea = () => {
         setMenu(true)
     }
   return (
-    <BrowserRouter>
-      <div className='main-area'>
-          <button className='menu-button' onClick={handleMenu}><img src={menuImg} alt='menu'/></button>
-          <MainRoute />
+    
+    <div className='main-area'>
+      <header className='main-header'>
+        <button className='menu-button' onClick={handleMenu}><img src={menuImg} alt='menu'/></button>
+        <HeaderRoute />
+      </header>
+      <div className='content'>
+        <MainRoute />
       </div>
-    </BrowserRouter>
+        
+    </div>
+
   )
 }
 
