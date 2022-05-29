@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './ProductView.css';
 //hook fetch
 import useProductListFetch from '../../../hooks/useProductListFetch';
 import ProductViewBody from './components/ProductViewBody';

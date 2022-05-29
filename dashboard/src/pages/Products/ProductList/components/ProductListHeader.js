@@ -1,6 +1,10 @@
-import React, {useRef} from 'react';
+import React, {useContext, useRef} from 'react';
+//context
+import { appContext } from '../../../../contexts/AppContext';
 
 const ProductListHeader = () => {
+
+  const{setSearch}= useContext(appContext)
 
   const title = useRef();
   const add = useRef();
@@ -35,7 +39,9 @@ const ProductListHeader = () => {
 
   const handleSearch = (e) => {
     if(e.target.value !== ''){
-      console.log(e.target.value.trim().toLowerCase())
+      setSearch(e.target.value.trim().toLowerCase());
+    }else{
+      setSearch("");
     }
   }
 

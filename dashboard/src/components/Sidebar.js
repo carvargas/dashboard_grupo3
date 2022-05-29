@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { menuContext } from '../contexts/MenuContext'
+import { appContext } from '../contexts/AppContext'
 import useOnClickOutside from '../hooks/useOnClickOutside'
 
 const Sidebar = () => {
-  const {menu, setMenu } = useContext(menuContext)
+  const {menu, setMenu } = useContext(appContext)
 
   const menulRef = useOnClickOutside( () => setMenu(false))
 
