@@ -1,5 +1,4 @@
 import React, { useContext} from 'react';
-import menuImg from'../assets/img/menu.svg';
 import { menuContext } from '../contexts/MenuContext';
 import HeaderRoute from '../routes/HeaderRoute';
 import MainRoute from '../routes/MainRoute'
@@ -15,7 +14,7 @@ const MainArea = () => {
     
     <div className='main-area'>
       <header className='main-header'>
-        <button className='menu-button' onClick={handleMenu}><img src={menuImg} alt='menu'/></button>
+        <button className='menu-button' onClick={handleMenu}><i class="fa-solid fa-bars"></i></button>
         <HeaderRoute />
       </header>
       <div className='content'>

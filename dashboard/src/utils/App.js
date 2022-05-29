@@ -1,7 +1,7 @@
 
 import './App.css';
 import MainArea from '../components/MainArea';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/sidebar/Sidebar';
 import MenuContext from '../contexts/MenuContext';
 import { BrowserRouter } from 'react-router-dom';
 
