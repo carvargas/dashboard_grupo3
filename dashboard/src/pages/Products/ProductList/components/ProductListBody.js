@@ -1,15 +1,16 @@
 import React from 'react';
-import '../ProductList.css';
 import ProductListCard from './ProductListCard';
 
-const ProductListBody = (props) => {
+const ProductListBody = (props) => {  
 
-  const { products } = props;
+  let { products } = props;
+  
+  
   return (
     <ul className='productList'>
-        {products.map((product,i) => (
-          <ProductListCard prop={{product,i}}/>
-        ))}
+      {products.map((product,i) => (  
+        <ProductListCard prop={{product} } key={i}/>
+      ))}
     </ul>
   )
 }

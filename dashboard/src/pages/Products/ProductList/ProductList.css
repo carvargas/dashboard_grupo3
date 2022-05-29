@@ -1,13 +1,11 @@
 .productListContainer{
-    position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     overflow-y: scroll;
 }
 
 /*Header*/
 .productHeader{
-    position: fixed;
     z-index: 200;
     width: 100%;
     height: 72px;
@@ -18,59 +16,78 @@
 }
     .productHeader ul{
         width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-    
         list-style: none;
     }
-    ul * {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-    
-        list-style: none;
-    }
-        .searchContainer{
-            position: relative;
-            width: 40px;
-            height: 30px;
+        .options-container{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
         }
-            .searchContainer input{
-                width: 100%;
-                height: 100%;
+            .fa-xmark{
+                display: none;
+                align-items: center;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .searchContainer{
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: center;
+                align-items: center;
+
+                width: 40px;
+                max-width: 80vw;
+                height: 30px;
+
+                margin-left: 10px;
+                background-color: rgb(41, 41, 41);
                 border: 1px solid white;
                 border-radius: 15px;
-                background-color: rgb(41, 41, 41);
-                color: white;
+
+                transition: all .2s linear;
+
+                cursor: pointer;
             }
-            .searchContainer .searchIcon{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-                .searchContainer input:focus{
-                    outline: none;
+                .searchContainer input{
+                    display: none;
+                    border: none;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    color: white;
+                    font-weight: 400;
+                    text-indent: 10px;
                 }
-        .addContainer{
-            margin-left: 10px;
-            width: 30px;
-            height: 30px;
-        }
-            .addContainer > button{
-                width: 100%;
-                height: 100%;
-                border: none;
-                border-radius: 15px;
-                background-color: rgb(41, 41, 41);
-                color: white;
-                font-size: 20px;
+                .searchContainer .searchIcon{
+                    cursor: pointer;
+                }
+                    .searchContainer input:focus{
+                        outline: none;
+                    }
+            .addContainer{
+                margin-left: 10px;
+                width: 30px;
+                height: 30px;
             }
+                .addContainer > button{
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    border-radius: 15px;
+                    background-color: rgb(41, 41, 41);
+                    color: white;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+                .addContainer > button > p{
+                    display: none;
+                }
     
 /*spinner*/
 .cargandoProductos{
@@ -122,7 +139,6 @@
 /*body*/
 .productList{
     margin: 15px auto;
-    margin-top: 85px;
     width: 98%;
     display: flex;
     flex-direction: column;
@@ -136,6 +152,7 @@
         z-index: 100;
         display: flex;
         justify-content: flex-start;
+        align-items: center;
         gap: 15px;
         padding: 5px 5px;
         background-color: rgb(41, 41, 41);
@@ -143,6 +160,19 @@
         color: white;
         cursor: pointer;
     }
+        .product:hover > figure{
+            transform: scale(1.2);
+            border: 2px solid black;
+        }
+        .product:hover{
+            box-shadow: 1px 1px 10px 1px rgba(6, 6, 6, 0.422);
+        }
+        .product:hover > button > img{
+            width: 35px;
+        }
+        .product:hover h3{
+            font-size: 15.5px;
+        }
         .product > figure{
             background-color: white;
             border-radius: 15px;
@@ -150,6 +180,8 @@
             min-width: 80px;
             height: 80px;
             min-height: 80px;
+
+            transition: all .3s linear;
         }
             figure img{
                 width: 100%;
@@ -166,6 +198,7 @@
             .productDesc > h3{
                 margin-right: 35px;
                 font-size: 15px;
+                transition: all .2s linear;
             }
             .productDesc > p{
                 font-size: 12px;
@@ -177,3 +210,47 @@
             position: absolute;
             right: 0;
         }
+@media(min-width:1025px){
+    /*Header*/
+    .productHeader{
+        width: 78%;
+    }   
+        .productHeader .title{
+            font-size: 23px;
+        }
+        .searchContainer{
+            transition: none;
+            width: 40%;
+            cursor: text;
+        }
+        .searchContainer:hover{
+            outline: 2px solid rgba(255, 255, 255, 0.485);
+        }
+            .searchContainer input{
+                display: flex;
+                width: 90%;
+            }
+            .searchContainer .searchIcon{
+                cursor: text;
+            }
+            .addContainer{
+                width: fit-content;
+                height: fit-content;
+            }
+                .addContainer > button{
+                    padding: 5px 10px;
+                    text-align: center;
+                    background-color: rgb(74, 74, 74);
+                    border-radius: 20px;
+                }
+                .addContainer > button:hover{
+                    background-color: rgb(57, 57, 57);
+                }
+                .addContainer > button > i{
+                    display: none;
+                }
+                .addContainer > button > p{
+                    display: flex;
+                    font-size: 15px;
+                }
+}

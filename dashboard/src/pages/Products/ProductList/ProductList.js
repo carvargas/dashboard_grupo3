@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import ProductListBody from './components/ProductListBody'
-import ProductListHeader from './components/ProductListHeader'
+import React from 'react';
+import ProductListBody from './components/ProductListBody';
+import './ProductList.css';
+//hook fetch
+import useProductListFetch from '../../../hooks/useProductListFetch';
 
 const ProductList = () => {
 
-  const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [products, isLoading] = useProductListFetch();
 
-  useEffect(() => {
-    
-    fetch('http://localhost:3030/api/allproducts')
-    .then(res => res.json())
-    .then(data => {
-      setProducts(data);
-      setIsLoading(false);
-    })
-    .catch(err => setIsLoading(false))
-  }, []);
-    
   return (
     <div className='productListContainer'>
-        <ProductListHeader/>
         { !isLoading ? 
           <ProductListBody products={products}/> 
           : 
