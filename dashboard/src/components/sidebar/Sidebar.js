@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { menuContext } from '../../contexts/MenuContext'
+import { appContext } from '../../contexts/AppContext'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 import logo from '../../assets/img/MiEcommerce.svg'
 import profilePic from '../../assets/img/profile_pic.svg'
@@ -7,7 +7,7 @@ import './Sidebar.css'
 import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
-  const {menu, setMenu } = useContext(menuContext)
+  const {menu, setMenu } = useContext(appContext)
 
   const menulRef = useOnClickOutside( () => setMenu(false))
 

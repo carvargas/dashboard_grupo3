@@ -6,7 +6,7 @@ import ProductView from '../pages/Products/ProductView/ProductView';
 
 const MainRoute = () => {
   return (
-        <Routes>
+    <Routes>
 
             <Route path='/' element={<Home />} />
             <Route path='/products' element={<ProductList />} />
