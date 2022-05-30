@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useContext, useState } from 'react';
+//context
+import { appContext } from '../../../../contexts/AppContext';
 
 const ProductViewInfo = (props) => {
   
   const { product } = props;
+
+  const [stock, setStock] = useState(product.stock);
+
+  const sumStock = () => {
+    setStock(stock + 1);
+    handleOnChangeInputs();
+  }
+  const subStock = () => {
+    if(stock > 0) setStock(stock - 1);
+    handleOnChangeInputs();
+  }
+
+  const{editProduct, setEditProduct}= useContext(appContext);
+
+  const handleOnChangeInputs = (e) => {
+    const { name, value } = e.target;
+    setEditProduct({...editProduct, [name]: value});
+    setEditProduct({...editProduct, "stock": stock});
+  }
 
   return (
     <div className='productViewInfoContainer'>
@@ -11,26 +32,25 @@ const ProductViewInfo = (props) => {
       <form>
         
         <label>Nombre</label>
-        <input type="text" placeholder='InputValue' autoComplete='off'></input>
+        <input name='nombre' type="text" placeholder='InputValue' autoComplete='off' defaultValue={product.nombre} onChange={handleOnChangeInputs}></input>
         
         <label>Valor</label>
-        <input type="text" placeholder='InputValue' autoComplete='off'></input>
+        <input name='puntos' type="text" placeholder='InputValue' autoComplete='off' defaultValue={product.puntos} onChange={handleOnChangeInputs}></input>
         
         <label>Stock</label>
         <div className="agregar-quitar">
-          <p className="quitarprod">-</p>
-          <span> {product.stock} </span>
-          <p className="agregarprod">+</p>
+          <p className="quitarprod" onClick={subStock}>-</p>
+          <span> {stock} </span>
+          <p className="agregarprod" onClick={sumStock}>+</p>
         </div>
         
         <label>Descripcion</label>
-        <textarea rows="5" placeholder='InputValue'></textarea>
+        <textarea name='description' rows="5" placeholder='InputValue' defaultValue={product.description} onChange={handleOnChangeInputs}></textarea>
         
         <label>Tienda</label>
         <select>
             <option hidden>--selecciona--</option>
             <option value="olivia">Olivia</option>
-            <option value="otra tienda">Otra tienda</option>
         </select>
 
       </form>

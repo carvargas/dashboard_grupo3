@@ -12,7 +12,7 @@ const Sidebar = () => {
   const menulRef = useOnClickOutside( () => setMenu(false))
 
   const handleFocus = (e) =>{
-    console.log(e.target)
+    // console.log(e.target)
 
   }
 
