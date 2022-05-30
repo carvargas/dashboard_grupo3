@@ -1,0 +1,33 @@
+.homeHeader{
+    color: white;
+    font-size: 26px;
+}
+.home-container {
+    box-sizing: border-box;
+}
+.homeButton:hover{
+    background: var(--Primary);
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+.homeButtonAdd:hover{
+    background: var(--Primary);
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+
+@media (min-width: 415px){
+    .item-text{
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 500px){
+    .homeButton{
+        min-width: 105px;
+    }
+    .homeButtonAdd{
+        min-width: 140px;
+        align-items: center;
+    }
+}
