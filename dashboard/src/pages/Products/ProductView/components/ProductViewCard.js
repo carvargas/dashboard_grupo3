@@ -1,12 +1,15 @@
 import React from 'react'
-
+import placeholder from '../../../../assets/img/productogenerico.svg'
+import profile from '../../../../assets/img/profile_pic.svg'
 const ProductViewCard = (props) => {
   const { product } = props;
+  
 
   return (
     <div className='productViewCardContainer'>
       <div className='imgContainer'>
-        <img src={product.src} alt={product.alt}/>
+        {product.src !== '' ? <img src={product.src} alt={product.alt}/> : <img src={placeholder} alt='' />}
+        
       </div>
       <div className='infoContainer'>
         <p>{product.nombre}</p>
@@ -20,7 +23,8 @@ const ProductViewCard = (props) => {
             <div className='p'><p>STOCK</p><p>DISPONIBLE</p></div>
           </div>
           <div className='infoContainerStore'>
-            <img src={product.store} alt="cart"/>
+            {product.store !=='' ? <img src={product.store} alt="cart"/> : <img src={profile} alt="cart"/>}
+            
             <p>Olivia</p>
           </div>
         </div>

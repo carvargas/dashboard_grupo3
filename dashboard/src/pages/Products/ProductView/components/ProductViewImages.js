@@ -13,9 +13,10 @@ const ProductViewImages = (props) => {
         <label>Nueva imagen</label>
         <input type="text" placeholder='InputValue' autoComplete='off'></input>
         
-        <label>Imagenes actuales</label>
+        {product.gallery.length !== 0 && <label>Imagenes actuales</label>}
         
         {
+          product.gallery.length !== 0 &&
           product.gallery.map((image, index) => {
             return (
               <div key={index}>
@@ -30,6 +31,7 @@ const ProductViewImages = (props) => {
               </div>
             )
           })
+          
         }
 
       </form>

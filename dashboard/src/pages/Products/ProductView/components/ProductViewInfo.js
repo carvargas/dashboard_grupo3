@@ -1,8 +1,9 @@
 import React from 'react'
+import { useForm } from '../../../../hooks/useForm';
 
 const ProductViewInfo = (props) => {
-  
   const { product } = props;
+  const {values, handleChage} = useForm(product)
 
   return (
     <div className='productViewInfoContainer'>
@@ -11,10 +12,10 @@ const ProductViewInfo = (props) => {
       <form>
         
         <label>Nombre</label>
-        <input type="text" placeholder='InputValue' autoComplete='off'></input>
+        <input type="text" placeholder='InputValue' name='nombre' onChange={handleChage} autoComplete='off' defaultValue={values} ></input>
         
         <label>Valor</label>
-        <input type="text" placeholder='InputValue' autoComplete='off'></input>
+        <input type="text" placeholder='InputValue' name='puntos' onChange={handleChage} autoComplete='off' defaultValue={values} ></input>
         
         <label>Stock</label>
         <div className="agregar-quitar">
@@ -24,7 +25,7 @@ const ProductViewInfo = (props) => {
         </div>
         
         <label>Descripcion</label>
-        <textarea rows="5" placeholder='InputValue'></textarea>
+        <textarea rows="5" placeholder='InputValue' name='description' onChange={handleChage} defaultValue={values} ></textarea>
         
         <label>Tienda</label>
         <select>
