@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const HomeSaludo = ({ user }) => {
   return <p className="homeHeader">¡Hola {user}!</p>;
 };
+HomeSaludo.defaultProps = {
+  user: "Olivia",
+};
 
 export const HomeItem = styled.div`
   display: flex;
@@ -42,6 +45,7 @@ export const HomeButton = styled.button`
   width: auto;
   height: 38px;
   margin-left: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background: var(--grisOscuro);
   border-radius: 16px;
   color: rgb(94%, 94%, 94%);
