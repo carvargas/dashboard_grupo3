@@ -30,6 +30,9 @@ export const HomeItem = styled.div`
     flex-direction: row;
     width: 260px;
   }
+  i {
+    padding: 8px 5px 0 0;
+  }
 `;
 
 export const HomeButton = styled.button`

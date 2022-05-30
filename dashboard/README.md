@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Mi Ecommerce Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
 
-## Available Scripts
+En etapas anteriores se nos solicitó crear un e-commerce, el cual se encuentra en *https://github.com/axelfischbein/proyecto_mi_ecommerce_lostriples*.  
+En esta etapa nos enfocaremos en construir un panel de control (dashboard) que permita al personal de nuestra empresa gestionar los productos que se ofrecen. Usaremos el patrón MVC con ReactJS como Vista para construir esta nueva app que se comunicará con los métodos que desarrollamos y expusimos en el proyecto anterior.
 
-In the project directory, you can run:
+**Estado:** _en proceso_
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologías
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **@testing-library/jest-dom:** _versión 5.16.4_
+- **@testing-library/react:** _versión 13.2.0_
+- **@testing-library/user-event:** _versión 13.5.0_
+- **react:** _versión 18.1.0_
+- **react-router-dom:** _versión 6.3.0_
+- **react-scripts:** _versión 5.0.1_
+- **styled-components:** _versión 5.3.5_
+- **web-vitals:** _versión 2.1.4_
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalación
 
-### `npm run build`
+1. Abre la consola del sistema y clona este proyecto con el comando **git clone https://github.com/carvargas/dashboard_grupo3.git**
+2. Ve a la carpeta del proyecto con el comando **cd dashboard**
+3. Instala las depencencias con el comando **npm install**
+4. Una vez hecho esto levanta el servidor con el comando **npm start**  
+   Para que todo funcione correctamente es necesario, en paralelo, tener levantado el servidor del proyecto que construimos en las etapas anteriores (https://github.com/axelfischbein/proyecto_mi_ecommerce_lostriples.git)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+En el navegador de preferencia, el **_localhost:3000_** será el encargado de permitir visualizar las distintas páginas con las que cuenta nuestra aplicación.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Rutas
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **/**  
+   Esta es la pantalla principal que se carga cuando la aplicación se abre. Da información importante y acceso directo a las funcionaes principales
+- **/products**  
+   Lleva al usuario a nuestra _página de productos_. Allí podrá navegar a través de un listado de productos, donde cada uno tiene su respectivo enlace para obtener información en detalle. Además, cuenta con una barra de búsqueda de productos.
+- **/products/:id**  
+   Cuando se selecciona un producto, esta es la ruta dinámica que lleva a la pantalla con el detalle del mismo, donde el usuario podrá observar sus características y modificarlas.
+- **/products/new**  
+   Aquí el usuario podrá dar de alta un nuevo producto, ingresando los datos requeridos del mismo (nombre, valor, stock, descripción, tienda e imagen).
