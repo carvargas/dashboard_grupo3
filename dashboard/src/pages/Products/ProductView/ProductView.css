@@ -193,6 +193,7 @@
     .productViewSaveCancel > button{
         width: 100px;
         height: 30px;
+        margin-bottom: 10px;
         border-radius: 15px;
         border: none;
         background-color: rgb(156, 156, 156);

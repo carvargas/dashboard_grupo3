@@ -21,7 +21,6 @@ const ProductListBody = (props) => {
     }
   }, [search, products])
 
-  // console.log(filtered);
   return (
     <ul className='productList'>
       {
