@@ -1,0 +1,94 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 999;
+    left: -296px;
+    background-color: #222;
+    height: 100vh;
+    width: 296px;
+    transition: 300ms all;
+    
+}
+
+.logo-container{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 72px;
+    width: 100%;
+}
+
+.menu-container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    color: white;
+    height: 100%
+}
+
+.menu-list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 5px;
+}
+
+.menu-list a li{
+    width: 100%;
+    padding: 5px ;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+}
+
+.menu-list a{
+    text-decoration: none;
+    border-radius: 8px;
+    color: white;
+}
+
+.menu-list a:hover{
+    background-color: var(--grisClaro);
+}
+
+.menu-list a:focus{
+    background-color: var(--grisClaro);
+    border-radius: 8px;
+}
+
+.profile-container{
+    width: 100%;
+    padding: 10px;
+}
+
+.profile{
+    width: 100%;
+    height: 32px;
+    color: white;
+    background: var(--grisOscuro);
+    border-radius: 16px;
+    border: 1px solid var(--grisOscuro);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
+.show-menu{
+    left:0;
+}
+
+@media(min-width:1025px){
+    .sidebar{
+      position: relative;
+      left: 0;
+    }
+}

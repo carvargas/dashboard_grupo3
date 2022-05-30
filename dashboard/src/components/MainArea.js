@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
-import menuImg from "../assets/img/menu.svg";
-import { menuContext } from "../contexts/MenuContext";
+import { appContext } from "../contexts/AppContext";
 import HeaderRoute from "../routes/HeaderRoute";
 import MainRoute from "../routes/MainRoute";
 
 const MainArea = () => {
-  const { setMenu } = useContext(menuContext);
+  const { setMenu } = useContext(appContext);
 
   const handleMenu = () => {
     setMenu(true);
@@ -14,7 +13,7 @@ const MainArea = () => {
     <div className="main-area">
       <header className="main-header">
         <button className="menu-button" onClick={handleMenu}>
-          <img src={menuImg} alt="menu" />
+          <i className="fa-solid fa-bars"></i>
         </button>
         <HeaderRoute />
       </header>

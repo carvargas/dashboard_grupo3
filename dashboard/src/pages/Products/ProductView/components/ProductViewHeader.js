@@ -1,23 +1,27 @@
 import React from 'react';
-import './ProductView.css';
+import { Link } from 'react-router-dom';
 //hook fetch
-import useProductListFetch from '../../../hooks/useProductListFetch';
-import ProductViewBody from './components/ProductViewBody';
+import useProductListFetch from '../../../../hooks/useProductListFetch';
 
-const ProductView = () => {
+const ProductViewHeader = () => {
 
   const [products, isLoading] = useProductListFetch();
-  
+
   let product = null;
   if(!isLoading){
     product = products.find(product => product._id === window.location.pathname.split('/')[2]);
   }
 
   return (
-    <div className='productViewContainer'>
-
+    <>
       { !isLoading && product ?
-        <ProductViewBody product={product}/> 
+        <nav className='productViewHeaderContainer'>
+          <ul>
+            <li><Link to={"/products"} style={{ textDecoration: 'none', color: 'white' }}><p className='title'>Productos</p></Link></li>
+            <li><i className="fa-solid fa-angle-right"></i></li>
+            <li><p className='title'>#{product._id}</p></li>
+          </ul>
+        </nav>
         : 
         <div className="cargandoProductos">
           <div className="spinner"> 
@@ -27,14 +31,13 @@ const ProductView = () => {
           </div>
         </div>
       }
-      
+
       {
         !product && !isLoading &&
         <div className="cargandoProductos"> No se encontro el producto </div>
       }
-
-    </div>
+    </>
   )
 }
 
-export default ProductView
+export default ProductViewHeader
