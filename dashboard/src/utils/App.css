@@ -38,7 +38,6 @@
   width: 100%;
   gap: 15px;
   padding: 10px;
-  border-bottom: 1px solid #222222;
 }
 
 .menu-button{
@@ -89,7 +88,6 @@
 
 @media(min-width:1025px){
   .main-area{
-    width: 100%;
     align-self: flex-end;
     justify-self: flex-end;
   }
