@@ -14,6 +14,7 @@
     --Primary: #0CB093;
     --categories: #333333;
     --rosa: palevioletred;
+    --grisFondo: #EFEFEF;
 }
 
 .App{
@@ -23,8 +24,9 @@
   .sidebar{
     display: flex;
     position: absolute;
+    z-index: 999;
     left: -296px;
-    background-color: #222;
+    background-color: #222222;
     height: 100vh;
     width: 296px;
     transition: 300ms all;
@@ -37,17 +39,39 @@
   
   .main-area{
     display: flex;
-    background-color: #999;
+    flex-direction: column;
+    background-color: #222222;
     height: 100vh;
     width:100%;
+    overflow: hidden;
+  }
+
+  .main-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    height: 72px;
+    width: 100%;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #222222;
   }
   
   .menu-button{
     display: flex;
+    z-index: 1;
     width: 40px;
     height: 40px;
     align-items: center;
     justify-content: center;
+  }
+
+  .content{
+    position: relative;
+    top: 72px;
+    height: calc(100vh - 72px);
+    overflow: scroll;
   }
   
   

@@ -8,12 +8,12 @@ import { BrowserRouter } from 'react-router-dom';
 const App = () => {
   return (
     <BrowserRouter>
-        <div className='App'>
+      <div className='App'>
         <MenuContext>
-            <Sidebar />
-            <MainArea />
+          <Sidebar />
+          <MainArea />
         </MenuContext>
-        </div>
+      </div>
     </BrowserRouter>
   );
 }
