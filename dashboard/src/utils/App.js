@@ -1,18 +1,17 @@
-
 import './App.css';
 import MainArea from '../components/MainArea';
 import Sidebar from '../components/sidebar/Sidebar';
-import MenuContext from '../contexts/MenuContext';
+import AppContext from '../contexts/AppContext';
 import { BrowserRouter } from 'react-router-dom';
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className='App'>
-        <MenuContext>
+        <AppContext>
           <Sidebar />
           <MainArea />
-        </MenuContext>
+        </AppContext>
       </div>
     </BrowserRouter>
   );
