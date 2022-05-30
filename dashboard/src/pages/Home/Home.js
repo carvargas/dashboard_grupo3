@@ -8,7 +8,7 @@ const Home = () => {
     <div className="home-container">
       <HomeItem>
         <section>
-          <i class="fa-solid fa-box"></i>
+          <i className="fa-solid fa-box"></i>
           <p>
             <b>123</b> Productos
           </p>
@@ -24,7 +24,7 @@ const Home = () => {
       </HomeItem>
       <HomeItem>
         <section>
-          <i class="fa-solid fa-shop"></i>
+          <i className="fa-solid fa-shop"></i>
           <p>
             <b>10</b> Tiendas
           </p>

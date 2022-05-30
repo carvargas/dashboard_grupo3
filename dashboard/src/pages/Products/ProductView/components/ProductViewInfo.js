@@ -1,28 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 //context
-import { appContext } from '../../../../contexts/AppContext';
+import { useForm } from '../../../../hooks/useForm';
 
 const ProductViewInfo = (props) => {
-  
   const { product } = props;
+  const {values, handleChage} = useForm(product)
 
   const [stock, setStock] = useState(product.stock);
 
   const sumStock = () => {
     setStock(stock + 1);
-    handleOnChangeInputs();
   }
   const subStock = () => {
     if(stock > 0) setStock(stock - 1);
-    handleOnChangeInputs();
-  }
-
-  const{editProduct, setEditProduct}= useContext(appContext);
-
-  const handleOnChangeInputs = (e) => {
-    const { name, value } = e.target;
-    setEditProduct({...editProduct, [name]: value});
-    setEditProduct({...editProduct, "stock": stock});
   }
 
   return (
@@ -32,10 +22,10 @@ const ProductViewInfo = (props) => {
       <form>
         
         <label>Nombre</label>
-        <input name='nombre' type="text" placeholder='InputValue' autoComplete='off' defaultValue={product.nombre} onChange={handleOnChangeInputs}></input>
+        <input type="text" placeholder='InputValue' name='nombre' onChange={handleChage} autoComplete='off' defaultValue={values} ></input>
         
         <label>Valor</label>
-        <input name='puntos' type="text" placeholder='InputValue' autoComplete='off' defaultValue={product.puntos} onChange={handleOnChangeInputs}></input>
+        <input type="text" placeholder='InputValue' name='puntos' onChange={handleChage} autoComplete='off' defaultValue={values} ></input>
         
         <label>Stock</label>
         <div className="agregar-quitar">
@@ -45,7 +35,7 @@ const ProductViewInfo = (props) => {
         </div>
         
         <label>Descripcion</label>
-        <textarea name='description' rows="5" placeholder='InputValue' defaultValue={product.description} onChange={handleOnChangeInputs}></textarea>
+        <textarea rows="5" placeholder='InputValue' name='description' onChange={handleChage} defaultValue={values} ></textarea>
         
         <label>Tienda</label>
         <select>
