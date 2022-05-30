@@ -12,7 +12,7 @@ const HeaderRoute = () => {
       <Route path="/products/:id" element={<ProductViewHeader />} />
       <Route
         path="/products/new"
-        element={<h1>Probando Header Agregar Producto</h1>}
+        element={<ProductViewHeader />}
       />
       <Route path="/*" element={<HomeSaludo />} />
     </Routes>
