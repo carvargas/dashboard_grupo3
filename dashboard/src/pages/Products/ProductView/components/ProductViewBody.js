@@ -22,10 +22,26 @@ const ProductViewBody = (props) => {
     const handleSaveProducts = () => {
       if(values._id > products.length){
         console.log("Nuevo producto: " + JSON.stringify(values));
-        //api agregar producto
+        //api agregar producto :
+
+        // fetch("api/agregarNuevoProducto/:_id", {
+        //   method: "POST",
+        //   body: JSON.stringify(obj),
+        //   headers: {
+        //     "Content-type": "application/json
+        //   }
+        // })
       }else{
         console.log("Actualizar producto: " + JSON.stringify(values));
         //api editar producto
+        
+        // fetch("api/editarProducto/:_id", {
+        //   method: "POST",
+        //   body: JSON.stringify(obj),
+        //   headers: {
+        //     "Content-type": "application/json
+        //   }
+        // })
       }
     }
     
