@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ProductViewInfo = (props) => {
 
-  const { product, values, handleChange } = props.product;  
-
-  const [stock, setStock] = useState(product.stock);
+  const { values, handleChange } = props.product;  
+  
+  const [stock, setStock] = useState(0);
   const sumStock = () => {
     setStock(stock + 1);
   }
   const subStock = () => {
     if(stock > 0) setStock(stock - 1);
   }
+  useEffect(() => {
+    handleChange({target: {name: 'stock', value: stock}});
+  }, [stock]);
 
   return (
     <div className='productViewInfoContainer'>
@@ -27,7 +30,13 @@ const ProductViewInfo = (props) => {
         <label>Stock</label>
         <div className="agregar-quitar">
           <p className="quitarprod" onClick={subStock}><i className="fa-solid fa-minus"></i></p>
-            <input type="number" name='stock' value={stock} className='inputStock' disabled/>
+            <input type="text" 
+                   name='stock' 
+                   value={stock}
+                   className='inputStock'  
+                   onChange={handleChange}
+                   disabled
+            />
           <p className="agregarprod" onClick={sumStock}><i className="fa-solid fa-plus"></i></p>
         </div>
         

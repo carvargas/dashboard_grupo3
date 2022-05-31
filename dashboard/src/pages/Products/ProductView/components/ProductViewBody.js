@@ -22,26 +22,26 @@ const ProductViewBody = (props) => {
     const handleSaveProducts = () => {
       if(values._id > products.length){
         console.log("Nuevo producto: " + JSON.stringify(values));
-        //api agregar producto :
 
-        // fetch("api/agregarNuevoProducto/:_id", {
-        //   method: "POST",
-        //   body: JSON.stringify(obj),
-        //   headers: {
-        //     "Content-type": "application/json
-        //   }
-        // })
+        fetch(`http://localhost:3030/api/agregarNuevoProducto`, {
+          method: "PUT",
+          body: JSON.stringify(values),
+          headers: {
+            "Content-type": "application/json"
+          }
+        });
+
       }else{
         console.log("Actualizar producto: " + JSON.stringify(values));
         //api editar producto
         
-        // fetch("api/editarProducto/:_id", {
-        //   method: "POST",
-        //   body: JSON.stringify(obj),
-        //   headers: {
-        //     "Content-type": "application/json
-        //   }
-        // })
+        fetch(`http://localhost:3030/api/editarProducto/${values._id}`, {
+          method: "PUT",
+          body: JSON.stringify(values),
+          headers: {
+            "Content-type": "application/json"
+          }
+        })
       }
     }
     
@@ -49,7 +49,7 @@ const ProductViewBody = (props) => {
     return (
       <div className='productViewBodyContainer'>
           <ProductViewCard product={product}/>
-          <ProductViewInfo product={{product, values, handleChange}}/>
+          <ProductViewInfo product={{values, handleChange}}/>
           <ProductViewImages product={product}/>
           <div className='productViewSaveCancel'>
             <button><Link to={"/products"} style={{ textDecoration: 'none', color: 'white' }}>Cancelar</Link></button>
