@@ -1,4 +1,3 @@
-import rightArrow from '../../../../assets/img/rightArrow.svg';
 import React from 'react';
 //hook useNavigate
 import { useNavigate } from "react-router-dom";
@@ -22,7 +21,7 @@ const ProductListCard = (props) => {
           <h3>{product.nombre}</h3>
           <p>#{product._id}</p>
       </div>
-      <button><img src={rightArrow} alt='right arrow'></img></button>
+      <button><i className="fa-solid fa-angle-right"></i></button>
     </li>
   )
 }

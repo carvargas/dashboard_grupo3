@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import '../ProductView/ProductView.css';
 //hook fetch
-import useProductListFetch from '../../../hooks/useProductListFetch';
 import ProductViewBody from '../ProductView/components/ProductViewBody';
 
 const NewProduct = () => {
-  const [ isLoading ] = useProductListFetch();
-  
-  const [state] = useState({
-    _id:0,
+
+  const [newproduct] = useState({
+    _id: 0,
     category:"",
     nombre:"",
     description:"",
@@ -23,12 +21,13 @@ const NewProduct = () => {
     __v:0
   })
 
-  let product = state;
+  let product = newproduct;
+  
 
   return (
     <div className='productViewContainer'>
 
-      { !isLoading && product ?
+      { product ?
         <ProductViewBody product={product}/> 
         : 
         <div className="cargandoProductos">
@@ -41,7 +40,7 @@ const NewProduct = () => {
       }
       
       {
-        !product && !isLoading &&
+        !product &&
         <div className="cargandoProductos"> No se encontro el producto </div>
       }
 

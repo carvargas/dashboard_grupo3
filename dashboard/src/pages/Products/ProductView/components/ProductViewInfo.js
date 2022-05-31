@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-//context
-import { useForm } from '../../../../hooks/useForm';
 
 const ProductViewInfo = (props) => {
-  const { product } = props;
-  const {values, handleChage} = useForm(product)
+
+  const { product, values, handleChange } = props.product;  
 
   const [stock, setStock] = useState(product.stock);
-
   const sumStock = () => {
     setStock(stock + 1);
   }
@@ -22,20 +19,20 @@ const ProductViewInfo = (props) => {
       <form>
         
         <label>Nombre</label>
-        <input type="text" placeholder='InputValue' name='nombre' onChange={handleChage} autoComplete='off' defaultValue={values} ></input>
+        <input type="text" placeholder='InputValue' name='nombre' onChange={handleChange} autoComplete='off' defaultValue={values.nombre} ></input>
         
         <label>Valor</label>
-        <input type="text" placeholder='InputValue' name='puntos' onChange={handleChage} autoComplete='off' defaultValue={values} ></input>
+        <input type="text" placeholder='InputValue' name='puntos' onChange={handleChange} autoComplete='off' defaultValue={values.puntos} ></input>
         
         <label>Stock</label>
         <div className="agregar-quitar">
-          <p className="quitarprod" onClick={subStock}>-</p>
-          <span> {stock} </span>
-          <p className="agregarprod" onClick={sumStock}>+</p>
+          <p className="quitarprod" onClick={subStock}><i className="fa-solid fa-minus"></i></p>
+            <input type="number" name='stock' value={stock} className='inputStock' disabled/>
+          <p className="agregarprod" onClick={sumStock}><i className="fa-solid fa-plus"></i></p>
         </div>
         
         <label>Descripcion</label>
-        <textarea rows="5" placeholder='InputValue' name='description' onChange={handleChage} defaultValue={values} ></textarea>
+        <textarea rows="5" placeholder='InputValue' name='description' onChange={handleChange} defaultValue={values.description} ></textarea>
         
         <label>Tienda</label>
         <select>

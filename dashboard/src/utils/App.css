@@ -26,7 +26,7 @@
     position: absolute;
     z-index: 999;
     left: -296px;
-    background-color: #222222;
+    background-color: var(--negro);
     height: 100vh;
     width: 296px;
     transition: 300ms all;
@@ -40,7 +40,7 @@
   .main-area{
     display: flex;
     flex-direction: column;
-    background-color: #222222;
+    background-color: var(--negro);
     height: 100vh;
     width:100%;
     overflow: hidden;
@@ -56,6 +56,8 @@
 }
 
 .main-header{
+  z-index: 999;
+  background-color: var(--negro);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -96,7 +98,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 2px grey;
+  box-shadow: inset 0 0 2px var(--grisClaro);
   border-radius: 10px;
   background-color: var(--blanco);
 }

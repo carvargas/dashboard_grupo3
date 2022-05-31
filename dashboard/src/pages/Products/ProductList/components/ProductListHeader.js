@@ -1,8 +1,14 @@
 import React, {useContext, useRef} from 'react';
+import { useNavigate } from 'react-router-dom';
 //context
 import { appContext } from '../../../../contexts/AppContext';
 
 const ProductListHeader = () => {
+  
+  const navigate = useNavigate();
+  const handleClickNewProduct = () => {
+    navigate(`/products/new`);
+  }
 
   const{setSearch}= useContext(appContext)
 
@@ -59,7 +65,7 @@ const ProductListHeader = () => {
               </li>
               
               <li ref={add} className='addContainer'>
-                <button>
+                <button onClick={handleClickNewProduct}>
                   <i className="fa-solid fa-plus"></i>
                   <p>Agregar producto</p>
                 </button>

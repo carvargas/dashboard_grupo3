@@ -12,7 +12,6 @@ const ProductView = () => {
   if(!isLoading){
     product = products.find(product => product._id === window.location.pathname.split('/')[2]);
   }
-
   return (
     <div className='productViewContainer'>
 

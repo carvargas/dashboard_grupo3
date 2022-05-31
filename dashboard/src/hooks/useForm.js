@@ -9,7 +9,7 @@ export const useForm = (initialState = {}) => {
         setValues(initialState);
     }
 
-    const handleChage = (e) => {
+    const handleChange = (e) => {
         setValues({
             ...values,
             [e.target.name]: e.target.value
@@ -17,5 +17,5 @@ export const useForm = (initialState = {}) => {
     }
 
 
-    return [values, handleChage, resetValues];
+    return [values, handleChange, resetValues, setValues];
 }

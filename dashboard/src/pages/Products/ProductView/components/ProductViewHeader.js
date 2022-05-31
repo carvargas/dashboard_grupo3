@@ -11,6 +11,17 @@ const ProductViewHeader = () => {
   if(!isLoading){
     product = products.find(product => product._id === window.location.pathname.split('/')[2]);
   }
+  if(window.location.pathname.split('/')[2] === 'new'){
+    return(
+      <nav className='productViewHeaderContainer'>
+        <ul>
+          <li><Link to={"/products"} style={{ textDecoration: 'none', color: 'white' }}><p className='title'>Productos</p></Link></li>
+          <li><i className="fa-solid fa-angle-right"></i></li>
+          <li><p className='title'>#{products.length + 1}</p></li>
+        </ul>
+      </nav>
+    )
+  }
 
   return (
     <>
