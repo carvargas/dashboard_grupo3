@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 //components
 import ProductViewCard from './ProductViewCard';
@@ -32,6 +32,7 @@ const ProductViewBody = (props) => {
         });
 
       }else{
+
         console.log("Actualizar producto: " + JSON.stringify(values));
         //api editar producto
         
@@ -42,8 +43,12 @@ const ProductViewBody = (props) => {
             "Content-type": "application/json"
           }
         })
+
+        console.log("producto actualizado");
+        
       }
     }
+    
     
 
     return (
