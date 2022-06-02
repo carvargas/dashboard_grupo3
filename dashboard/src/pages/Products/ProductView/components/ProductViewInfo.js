@@ -4,7 +4,7 @@ const ProductViewInfo = (props) => {
 
   const { values, handleChange } = props.product;  
   
-  const [stock, setStock] = useState(0);
+  const [stock, setStock] = useState(values.stock);
   const sumStock = () => {
     setStock(stock + 1);
   }

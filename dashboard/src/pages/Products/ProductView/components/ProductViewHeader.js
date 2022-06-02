@@ -9,7 +9,7 @@ const ProductViewHeader = () => {
 
   let product = null;
   if(!isLoading){
-    product = products.find(product => product._id === window.location.pathname.split('/')[2]);
+    product = products.find(product => parseInt(product._id) === parseInt(window.location.pathname.split('/')[2]));
   }
   if(window.location.pathname.split('/')[2] === 'new'){
     return(

@@ -13,7 +13,9 @@ const useProductListFetch = () => {
           setProducts(data);
           setIsLoading(false);
         })
-        .catch(err => setIsLoading(false))
+        .catch(err => {
+          setIsLoading(false);
+        });
 
     },[]);
 

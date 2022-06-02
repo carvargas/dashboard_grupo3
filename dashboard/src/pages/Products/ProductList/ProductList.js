@@ -23,7 +23,7 @@ const ProductList = () => {
           </div>
         }
         {
-          products.length === 0 && !isLoading &&
+          products.length === 0 && !isLoading && console.log(products) &&
           <div className="cargandoProductos"> No hay productos disponibles </div>
         }
         

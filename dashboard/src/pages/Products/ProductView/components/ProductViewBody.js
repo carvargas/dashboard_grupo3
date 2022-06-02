@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 //components
 import ProductViewCard from './ProductViewCard';
@@ -13,16 +13,19 @@ const ProductViewBody = (props) => {
     const { product } = props;
 
     const [products] = useProductListFetch();
-
+    
+    const [values, handleChange] = useForm(product);
+    
     if(product._id === 0 && products.length > 0){
       product._id = products.length + 1;
+      values._id = products.length + 1;
     }
-    const [values, handleChange] = useForm(product);
 
     const handleSaveProducts = () => {
-      if(values._id > products.length){
-        console.log("Nuevo producto: " + JSON.stringify(values));
 
+      if(values._id > products.length){
+        
+        //api nuevo producto
         fetch(`http://localhost:3030/api/agregarNuevoProducto`, {
           method: "PUT",
           body: JSON.stringify(values),
@@ -30,12 +33,11 @@ const ProductViewBody = (props) => {
             "Content-type": "application/json"
           }
         });
+        console.log("producto agregado");
 
       }else{
-
-        console.log("Actualizar producto: " + JSON.stringify(values));
-        //api editar producto
         
+        //api editar producto
         fetch(`http://localhost:3030/api/editarProducto/${values._id}`, {
           method: "PUT",
           body: JSON.stringify(values),
@@ -55,7 +57,7 @@ const ProductViewBody = (props) => {
       <div className='productViewBodyContainer'>
           <ProductViewCard product={product}/>
           <ProductViewInfo product={{values, handleChange}}/>
-          <ProductViewImages product={product}/>
+          <ProductViewImages product={{product, values, handleChange}}/>
           <div className='productViewSaveCancel'>
             <button><Link to={"/products"} style={{ textDecoration: 'none', color: 'white' }}>Cancelar</Link></button>
             <button onClick={handleSaveProducts}>Guardar</button>

@@ -15,6 +15,17 @@ const Sidebar = () => {
     // console.log(e.target)
 
   }
+  const handleReiniciarProductos = () => {
+    // console.log("reiniciar productos")
+    // api reiniciar productos
+    fetch(`http://localhost:3030/api/reiniciarProductos`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json"
+      }
+    });
+  };
+
 
   return (
     <div ref={menulRef} className={menu? 'sidebar show-menu':'sidebar'}>
@@ -33,6 +44,12 @@ const Sidebar = () => {
             <li onClick={handleFocus}>            
               <i className="fa-solid fa-box"></i>
               Productos          
+            </li>
+          </Link>
+          <Link to={'/'}>
+            <li onClick={handleReiniciarProductos}>            
+              <i className="fa-solid fa-box"></i>
+              Reiniciar Productos          
             </li>
           </Link>
         </ul>
