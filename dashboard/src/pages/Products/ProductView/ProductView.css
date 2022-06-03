@@ -1,13 +1,20 @@
 /*Product view header*/
+
+
 .productViewHeaderContainer{
     z-index: 300;
     margin: 15px;
     width: 100%;
     height: 72px;
-    color: var(--blanco);
     display: flex;
     justify-content: center;
+    color: var(--blanco);
+
 }
+    .title{
+        color: var(--blanco);
+    }
+
     .productViewHeaderContainer ul{
         width: 100%;
         display: flex;
@@ -17,6 +24,7 @@
         list-style: none;
         gap: 15px;
         font-size: 20px;
+        
     }
 
 /* Product view card */
@@ -28,6 +36,7 @@
     margin: 15px 10px;
     color: var(--blanco);
     font-size: 15px;
+    
 }
     .productViewCardContainer > .imgContainer{
         width: 50px;
@@ -35,11 +44,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        
     }
         .productViewCardContainer > .imgContainer > img{
             width: 100%;
             height: 100%;
             border-radius: 15px;
+            
         }
     .productViewCardContainer > .infoContainer{
         display: flex;
@@ -47,9 +58,11 @@
         justify-content: center;
         align-items: flex-start;
         padding: 5px 5px;
+        
     }
         .productViewCardContainer > .infoContainer > div{
             display: flex;
+            
         }
             .productViewCardContainer > .infoContainer > div > .infoContainerItem{
                 display: flex;
@@ -58,9 +71,10 @@
                 color: var(--blanco);
                 margin-right: 15px;
                 font-size: 14px;
+                
             }
             .productViewCardContainer > .infoContainer > div > .infoContainerItem > .p{
-                color: var(--grisClaro);
+                color: var(--blanco );
                 font-size: 7px;
                 margin-left: 5px;
             }
@@ -107,13 +121,13 @@
             margin-bottom: 10px;
             margin-top: 3px;
             text-indent: 15px;
-            color: var(--blanco);
+           
         }
         .productViewInfoContainer > form > input:focus{
             outline: none;
         }
         .productViewInfoContainer > form > input::placeholder{
-            color: var(--grisClaro);
+            color: var(--blanco);
         }
 
         .productViewInfoContainer > form > .agregar-quitar{
@@ -156,11 +170,14 @@
             padding: 15px 15px;
             color: var(--blanco);
         }
+
+
+
         .productViewInfoContainer > form > textarea:focus{
             outline: none;
         }
         .productViewInfoContainer > form > textarea::placeholder{
-            color: var(--grisClaro);
+            color: var(--blanco);
         }
         .productViewInfoContainer > form > select{
             width: 100%;
@@ -245,10 +262,15 @@
         margin-bottom: 10px;
         border-radius: 15px;
         border: none;
-        background-color: var(--grisClaro);
-        border: 1px solid var(--grisOscuro);
+        background-color: var(--grisOscuro);
+        border: 1px solid var(--grisClaro);
         cursor: pointer;
         color: var(--blanco);
+    }
+
+    .productViewSaveCancel > button:hover{
+        background: var(--Primary);
+        transition: all 300ms ease;
     }
 @media (max-width: 375px) {
 

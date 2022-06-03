@@ -6,8 +6,9 @@ import profilePic from '../../assets/img/profile_pic.svg'
 import './Sidebar.css'
 import { Link } from 'react-router-dom'
 
+
 const Sidebar = () => {
-  const {menu, setMenu } = useContext(appContext)
+  const {menu, setMenu, cambiarModo } = useContext(appContext)
 
   const menulRef = useOnClickOutside( () => setMenu(false))
 
@@ -22,6 +23,7 @@ const Sidebar = () => {
     });
   };
 
+  
 
   return (
     <div ref={menulRef} className={menu? 'sidebar show-menu':'sidebar'}>
@@ -48,10 +50,13 @@ const Sidebar = () => {
               Reiniciar Productos          
             </li>
           </Link>
+          
+          <li onClick={cambiarModo}>            
+              <i className="fa-solid fa-moon"></i>
+                Modo oscuro
+            </li>
+            
         </ul>
-
-        
-
       </div>
       <div className='profile-container'>
         <div className="profile">
@@ -63,5 +68,6 @@ const Sidebar = () => {
     </div>
   )
 }
+
 
 export default Sidebar

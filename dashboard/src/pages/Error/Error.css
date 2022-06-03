@@ -1,3 +1,24 @@
+:root{
+    --negro: #222222;
+    --blanco: white;
+    --grisClaro: #999999;
+    --grisOscuro: #494F51;
+    --Primary: #0CB093;
+    --categories: #333333;
+    --rosa: palevioletred;
+    --grisFondo: #EFEFEF;
+}
+:root.dark{
+  --negro: #efefef;
+  --blanco: black;
+  --grisClaro: #494F51;
+  --grisOscuro: #999999;
+  --Primary: #0CB093;
+  --categories: #999999;
+  --rosa: palevioletred;
+  --grisFondo: #efefef;
+}
+
 .btn-index:hover{
     background: var(--Primary);
     transition: all 300ms ease;
@@ -12,6 +33,7 @@
         height: auto;
         padding: 20px;
         margin-bottom: 10px;
+        
     }
     .sad-face{
         display: flex;
@@ -23,7 +45,8 @@
     .msg-container{
         font-size: 16px;
         padding: 15px;
-        min-height: 150px;   
+        min-height: 150px;
+        color: var(--rosa);
     }
     .btn-index{
         padding: 12px;
@@ -59,3 +82,7 @@
         font-size: 14px;
     }
 }
+
+.msg-container{
+    color: var(--negro);
+   }

@@ -16,6 +16,16 @@
     --rosa: palevioletred;
     --grisFondo: #EFEFEF;
 }
+:root.dark{
+  --negro: #efefef;
+  --blanco: black;
+  --grisClaro: #494F51;
+  --grisOscuro: #999999;
+  --Primary: #0CB093;
+  --categories: #999999;
+  --rosa: palevioletred;
+  --grisFondo: #efefef;
+}
 
 .App{
     display: flex;

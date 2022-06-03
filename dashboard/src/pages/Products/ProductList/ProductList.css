@@ -105,7 +105,7 @@
   .spinner > div {
     width: 18px;
     height: 18px;
-    background-color: #333;
+    background-color: var(--grisOscuro);
   
     border-radius: 100%;
     display: inline-block;
@@ -164,7 +164,7 @@
             border: 2px solid var(--negro);
         }
         .product:hover{
-            box-shadow: 1px 1px 10px 1px black;
+            box-shadow: 1px 1px 10px 1px var(--negro);
         }
         .product:hover > button{
             font-size: 27px;
@@ -243,11 +243,11 @@
                 .addContainer > button{
                     padding: 5px 10px;
                     text-align: center;
-                    background-color: rgb(74, 74, 74);
+                    background-color: var(--grisClaro);
                     border-radius: 20px;
                 }
                 .addContainer > button:hover{
-                    background-color: rgb(57, 57, 57);
+                    background-color: var(--grisClaro);
                 }
                 .addContainer > button > i{
                     display: none;
