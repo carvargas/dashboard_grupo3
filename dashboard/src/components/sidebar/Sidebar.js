@@ -11,10 +11,6 @@ const Sidebar = () => {
 
   const menulRef = useOnClickOutside( () => setMenu(false))
 
-  const handleFocus = (e) =>{
-    // console.log(e.target)
-
-  }
   const handleReiniciarProductos = () => {
     // console.log("reiniciar productos")
     // api reiniciar productos
@@ -41,9 +37,9 @@ const Sidebar = () => {
             </li>
           </Link>
           <Link to={'/products'}>
-            <li onClick={handleFocus}>            
+            <li>            
               <i className="fa-solid fa-box"></i>
-              Productos          
+              Productos
             </li>
           </Link>
           <Link to={'/'}>

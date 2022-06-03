@@ -26,11 +26,11 @@ const ProductListBody = (props) => {
       {
         search !== '' ?
         filtered.map((product,i) => (  
-          <ProductListCard prop={{product} } key={i}/>
+          <ProductListCard product={product} key={i}/>
         ))
         :
         products.map((product,i) => (  
-          <ProductListCard prop={{product} } key={i}/>
+          <ProductListCard product={product} key={i}/>
         ))
       }
     </ul>

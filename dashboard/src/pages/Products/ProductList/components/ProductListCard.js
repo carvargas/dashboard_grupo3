@@ -10,7 +10,7 @@ const ProductListCard = (props) => {
     navigate(`/products/${id}`);
   }
 
-  const { product } = props.prop;
+  const { product } = props;
 
   return (
     <li className="product" onClick={()=>{ handleClickProduct(product._id) }}>
