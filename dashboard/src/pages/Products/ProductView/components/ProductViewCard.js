@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import placeholder from '../../../../assets/img/productogenerico.svg'
 import profile from '../../../../assets/img/profile_pic.svg'
 const ProductViewCard = (props) => {
+  
   const { product } = props;
   
 

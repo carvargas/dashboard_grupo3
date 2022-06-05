@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProductViewImages = (props) => {
 
-  const { product, values, handleChange } = props.product;
+  let { product, values, handleChange } = props.product;
 
   const handleQuitarImagen = (e) => {
     e.preventDefault();

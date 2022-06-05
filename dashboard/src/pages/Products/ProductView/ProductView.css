@@ -130,7 +130,9 @@
             margin-top: 3px;
             margin-bottom: 10px;
         }
-            .agregar-quitar p{
+            .agregar-quitar button{
+                background-color: transparent;
+                border: none;
                 width: 20px;
                 height: 20px;
                 cursor: pointer;
@@ -189,7 +191,6 @@
           -webkit-appearance: none; 
           margin: 0; 
         }
-
 /* Product view images */
 .productViewImageItem{
     width: 100%;
