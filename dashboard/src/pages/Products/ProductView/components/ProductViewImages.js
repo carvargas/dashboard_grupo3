@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProductViewImages = (props) => {
 
-  let { product, values, handleChange } = props.product;
+  let { values, handleChange } = props.product;
 
   const handleQuitarImagen = (e) => {
     e.preventDefault();
@@ -25,12 +25,18 @@ const ProductViewImages = (props) => {
     <div className='productViewImageContainer productViewInfoContainer'>
 
       <h3>Galeria de imagenes</h3>
-      <form>
+
+      <form name='form'>
         
-        <label>Nueva imagen</label>
-        <input type="text" placeholder='InputValue' autoComplete='off' onBlur={handleAgregarImagen}></input>
+        <label id='newImage'> Nueva imagen </label>
+        <input type="text"
+               aria-labelledby='newImage'
+               placeholder='InputValue' 
+               autoComplete='off' 
+               onBlur={handleAgregarImagen}
+        />
         
-        {product.gallery.length !== 0 && <label>Imagenes actuales</label>}
+        {values.gallery.length !== 0 ? <label>Imagenes actuales</label> : <label>No hay imagenes actuales</label>}
         
         {
           values.gallery.length !== 0 &&
