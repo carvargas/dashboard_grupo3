@@ -17,18 +17,9 @@ describe("pruebas en el componente <Error />", () => {
     expect(btnVolver).toBeInTheDocument();
   });
 
-  test("se hace el hover correctamente sobre el boton", () => {
-    const btnVolver = screen.getByText(/volver/i);
-    const style = window.getComputedStyle(btnVolver);
-    expect(style.background).toBe("rgb(73, 79, 81)");
-
-    userEvent.click(btnVolver);
-
-    console.log(first);
-
-    // expect(newStyle.background).toBe("rgb(12, 176, 147)");
-
-    /* expect(btnVolver).toHaveStyle("background: rgb(12, 176, 147)"); */
-    // expect(style.background).not.toBe("rgb(73, 79, 81)");
+  test("los botones redirigen correctamente", () => {
+    const btnVolver = screen.getByTestId("inicio", { selector: "a" });
+    expect(btnVolver).toBeInTheDocument();
+    expect(btnVolver).toHaveAttribute("href", "/");
   });
 });
