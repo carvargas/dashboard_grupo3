@@ -10,10 +10,7 @@ const HeaderRoute = () => {
       <Route path="/" element={<HomeSaludo />} />
       <Route path="/products" element={<ProductListHeader />} />
       <Route path="/products/:id" element={<ProductViewHeader />} />
-      <Route
-        path="/products/new"
-        element={<ProductViewHeader />}
-      />
+      <Route path="/products/new" element={<ProductViewHeader />} />
       <Route path="/*" element={<HomeSaludo />} />
     </Routes>
   );

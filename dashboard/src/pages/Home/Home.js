@@ -10,7 +10,7 @@ const Home = () => {
         <section>
           <i className="fa-solid fa-box"></i>
           <p>
-            <b>123</b> Productos
+            <b>14</b> Productos
           </p>
         </section>
         <div>
@@ -36,7 +36,6 @@ const Home = () => {
           <Link style={{ textDecoration: "none" }} to="/stores/new">
             <HomeButton className="homeButtonAdd">Agregar Tienda</HomeButton>
           </Link>
-          {/* <Modal/> */}
         </div>
       </HomeItem>
     </div>

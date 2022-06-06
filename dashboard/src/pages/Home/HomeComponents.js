@@ -46,7 +46,7 @@ export const HomeButton = styled.button`
   height: 38px;
   margin-left: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background: var(--grisOscuro);
+  background: rgb(73, 79, 81);
   border-radius: 16px;
   color: rgb(94%, 94%, 94%);
   padding: 0 20px;
@@ -54,4 +54,5 @@ export const HomeButton = styled.button`
   border-style: inherit;
   cursor: pointer;
   transition: all 300ms ease;
+  text-decoration: none;
 `;
