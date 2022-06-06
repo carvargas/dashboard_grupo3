@@ -30,6 +30,7 @@ const ProductViewImages = (props) => {
         
         <label id='newImage'> Nueva imagen </label>
         <input type="text"
+               name="newImage"
                aria-labelledby='newImage'
                placeholder='InputValue' 
                autoComplete='off' 

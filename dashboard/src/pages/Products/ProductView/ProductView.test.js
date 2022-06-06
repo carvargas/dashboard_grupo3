@@ -3,10 +3,10 @@ import {render, screen} from '@testing-library/react';
 //dependencias
 import { BrowserRouter } from 'react-router-dom';
 //componentes
-import ProductViewHeader from './ProductViewHeader';
+import ProductView from './ProductView';
 //mocks
-import useProductListFetch from '../../../../hooks/useProductListFetch';
-jest.mock('../../../../hooks/useProductListFetch');
+import useProductListFetch from '../../../hooks/useProductListFetch';
+jest.mock('../../../hooks/useProductListFetch');
 
 let products = [
     {
@@ -43,98 +43,9 @@ let products = [
 let isLoading = false;
 let product = null;
 
-describe('Teseando <ProductViewHeader/>', () => { 
+describe('Teseando <ProductView/>', () => { 
 
-    describe('testeando el header de un nuevo producto', () => { 
-        
-        beforeEach(() => {
-
-            useProductListFetch.mockReturnValue([products, isLoading]);
-    
-            global.window = Object.create(window);
-            const url = "localhost:3030/products/new";
-            Object.defineProperty(window, "location", {
-                value: {
-                   pathname: url
-                },
-                writable: true
-            });
-
-            if(!isLoading){
-                product = products.find(product => parseInt(product._id) === parseInt(window.location.pathname.split('/')[2]));
-            }
-    
-            render(
-                <BrowserRouter>
-                    <ProductViewHeader/>
-                </BrowserRouter>
-            )
-
-        });
-
-        test('se renderiza un nav con 3 li: producto, >, #producto', () => {
-
-            const nav = screen.getByRole('navigation');
-            expect(nav).toBeInTheDocument();
-
-            const lis = nav.querySelectorAll('li');
-            expect(lis).toHaveLength(3);
-            lis.forEach(li => {
-                expect(li).toBeInTheDocument();
-            });
-            expect(lis[0]).toHaveTextContent('Productos');
-            const productsLength = products.length;
-            expect(lis[2]).toHaveTextContent(`#${productsLength+1}`);
-
-        });
-
-    });
-
-    describe('testeando el header de un producto', () => { 
-       
-        beforeEach(() => {
-
-            useProductListFetch.mockReturnValueOnce([products, isLoading]);
-    
-            global.window = Object.create(window);
-            const url = "localhost:3030/products/3";
-            Object.defineProperty(window, "location", {
-                value: {
-                   pathname: url
-                },
-                writable: true
-            });
-
-            if(!isLoading){
-                product = products.find(product => parseInt(product._id) === parseInt(window.location.pathname.split('/')[2]));
-            }
-    
-            render(
-                <BrowserRouter>
-                    <ProductViewHeader/>
-                </BrowserRouter>
-            )
-
-        });
-
-        test('se renderiza un nav con 3 li: producto, >, #producto', () => {
-
-            const nav = screen.getByRole('navigation');
-            expect(nav).toBeInTheDocument();
-
-            const lis = nav.querySelectorAll('li');
-            expect(lis).toHaveLength(3);
-            lis.forEach(li => {
-                expect(li).toBeInTheDocument();
-            });
-            expect(lis[0]).toHaveTextContent('Productos');
-            expect(lis[2]).toHaveTextContent(`#${product._id}`);
-
-        });
-
-    });
-
-    describe('testeando el header de un producto cuando esta cargando', () => { 
+    describe('testeando cuando un producto cuando esta cargando', () => { 
        
         beforeEach(() => {
 
@@ -156,7 +67,7 @@ describe('Teseando <ProductViewHeader/>', () => {
     
             render(
                 <BrowserRouter>
-                    <ProductViewHeader/>
+                    <ProductView/>
                 </BrowserRouter>
             )
 
@@ -193,7 +104,7 @@ describe('Teseando <ProductViewHeader/>', () => {
     
             render(
                 <BrowserRouter>
-                    <ProductViewHeader/>
+                    <ProductView/>
                 </BrowserRouter>
             )
             screen.debug();
