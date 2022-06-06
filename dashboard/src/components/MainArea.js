@@ -12,7 +12,7 @@ const MainArea = () => {
   return (
     <div className="main-area">
       <header className="main-header">
-        <button className="menu-button" onClick={handleMenu}>
+        <button data-testid='menu' className="menu-button" onClick={handleMenu}>
           <i className="fa-solid fa-bars"></i>
         </button>
         <HeaderRoute />
