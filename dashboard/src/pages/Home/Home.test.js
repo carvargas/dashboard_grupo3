@@ -1,6 +1,9 @@
+//testing
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+//dependencias
 import { BrowserRouter } from "react-router-dom";
+//componentes
 import Home from "./Home";
 
 describe("testeando el home", () => {

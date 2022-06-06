@@ -1,5 +1,8 @@
+//testing
 import { render, screen } from "@testing-library/react";
+//componentes
 import Error from "./Error";
+//dependencias
 import { BrowserRouter } from "react-router-dom";
 
 describe("pruebas en el componente <Error />", () => {
