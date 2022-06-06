@@ -23,7 +23,7 @@ const Error = () => {
             </p>
           </ErrorMsg>
         </RedContainer>
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link data-testid="inicio" style={{ textDecoration: "none" }} to="/">
           <HomeButton className="btn-index">Volver al Inicio</HomeButton>
         </Link>
       </ErrorContainer>
