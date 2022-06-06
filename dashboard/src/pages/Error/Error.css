@@ -18,7 +18,42 @@
   --rosa: palevioletred;
   --grisFondo: #efefef;
 }
-
+.error-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.red-container{
+    display: flex;
+    height: auto;
+    width: 70%;
+    position: relative;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(192, 74, 80);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    padding: 50px;
+    min-height: 330px;
+    margin: 80px 15% 20px 15%;
+}
+.sad-face{
+    width: 200px;
+    height: 200px;
+}
+.msg-container{
+    display: flex;
+    flex-direction: column;
+    background: var(--blanco);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    padding: 20px;
+    min-height: 200px;
+    width: 100%;
+    height: fit-content;
+    font-size: 18px;
+    color: var(--negro);
+}
 .btn-index:hover{
     background: var(--Primary);
     transition: all 300ms ease;
