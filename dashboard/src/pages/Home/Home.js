@@ -17,10 +17,18 @@ const Home = () => {
           </p>
         </section>
         <div>
-          <Link style={{ textDecoration: "none" }} to="/products">
+          <Link
+            data-testid="listado-productos"
+            style={{ textDecoration: "none" }}
+            to="/products"
+          >
             <HomeButton className="homeButton">Ver Listado</HomeButton>
           </Link>
-          <Link style={{ textDecoration: "none" }} to="/products/new">
+          <Link
+            data-testid="agregar-producto"
+            style={{ textDecoration: "none" }}
+            to="/products/new"
+          >
             <HomeButton className="homeButtonAdd">Agregar Producto</HomeButton>
           </Link>
         </div>
@@ -33,10 +41,18 @@ const Home = () => {
           </p>
         </section>
         <div>
-          <Link style={{ textDecoration: "none" }} to="/stores">
+          <Link
+            data-testid="listado-tiendas"
+            style={{ textDecoration: "none" }}
+            to="/stores"
+          >
             <HomeButton className="homeButton">Ver Listado</HomeButton>
           </Link>
-          <Link style={{ textDecoration: "none" }} to="/stores/new">
+          <Link
+            data-testid="agregar-tienda"
+            style={{ textDecoration: "none" }}
+            to="/stores/new"
+          >
             <HomeButton className="homeButtonAdd">Agregar Tienda</HomeButton>
           </Link>
         </div>

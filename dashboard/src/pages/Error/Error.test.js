@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import Error from "./Error";
 import { BrowserRouter } from "react-router-dom";
 
@@ -17,8 +16,8 @@ describe("pruebas en el componente <Error />", () => {
     expect(btnVolver).toBeInTheDocument();
   });
 
-  test("los botones redirigen correctamente", () => {
-    const btnVolver = screen.getByTestId("inicio", { selector: "a" });
+  test("el boton de volver redirige correctamente", () => {
+    const btnVolver = screen.getByTestId("inicio");
     expect(btnVolver).toBeInTheDocument();
     expect(btnVolver).toHaveAttribute("href", "/");
   });
