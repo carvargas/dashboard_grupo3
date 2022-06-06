@@ -2,15 +2,18 @@
 import { Link } from "react-router-dom";
 import { HomeItem, HomeButton } from "./HomeComponents";
 import "./Home.css";
+import useProductListFetch from "../../hooks/useProductListFetch";
 
 const Home = () => {
+  const [products] = useProductListFetch();
+  console.log(products);
   return (
     <div className="home-container">
       <HomeItem>
         <section>
           <i className="fa-solid fa-box"></i>
           <p>
-            <b>123</b> Productos
+            <b>{products ? products.length : "..."}</b> Productos
           </p>
         </section>
         <div>
@@ -36,7 +39,6 @@ const Home = () => {
           <Link style={{ textDecoration: "none" }} to="/stores/new">
             <HomeButton className="homeButtonAdd">Agregar Tienda</HomeButton>
           </Link>
-          {/* <Modal/> */}
         </div>
       </HomeItem>
     </div>
