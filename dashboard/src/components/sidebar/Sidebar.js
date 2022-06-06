@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   const {menu, setMenu } = useContext(appContext)
-
+  console.log(menu, setMenu)
   const menulRef = useOnClickOutside( () => setMenu(false))
 
   const handleReiniciarProductos = () => {
@@ -30,24 +30,24 @@ const Sidebar = () => {
       </div>
       <div className='menu-container'>
         <ul className='menu-list'>
-          <Link to={'/'}>
-            <li>            
+          <li>            
+            <Link to={'/'}>
               <i className="fa-solid fa-house"></i>
-                Inicio
-            </li>
-          </Link>
-          <Link to={'/products'}>
-            <li>            
+              Inicio
+            </Link>
+          </li>
+          <li>            
+            <Link to={'/products'}>
               <i className="fa-solid fa-box"></i>
               Productos
-            </li>
-          </Link>
-          <Link to={'/'}>
-            <li onClick={handleReiniciarProductos}>            
+            </Link>
+          </li>
+          <li onClick={handleReiniciarProductos}>            
+            <Link to={'/'}>
               <i className="fa-solid fa-box"></i>
               Reiniciar Productos          
-            </li>
-          </Link>
+            </Link>
+          </li>
         </ul>
 
         
