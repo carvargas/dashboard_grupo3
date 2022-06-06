@@ -121,8 +121,9 @@
             margin-bottom: 10px;
             margin-top: 3px;
             text-indent: 15px;
-           
+            color: var(--blanco);
         }
+        
         .productViewInfoContainer > form > input:focus{
             outline: none;
         }
@@ -159,7 +160,7 @@
             .agregar-quitar p:hover{
                 color: var(--grisClaro);
             }
-        .productViewInfoContainer > form > textarea{
+            .productViewInfoContainer > form > textarea{
             max-width: 700px;
             resize: none;
             background-color: var(--grisOscuro);
@@ -257,6 +258,7 @@
     gap: 10px;
 }
     .productViewSaveCancel > button{
+        text-decoration: none;
         width: 100px;
         height: 30px;
         margin-bottom: 10px;
@@ -265,7 +267,7 @@
         background-color: var(--grisOscuro);
         border: 1px solid var(--grisClaro);
         cursor: pointer;
-        color: var(--blanco);
+        color: white;
     }
 
     .productViewSaveCancel > button:hover{

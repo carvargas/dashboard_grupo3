@@ -50,8 +50,6 @@ const ProductViewBody = (props) => {
         
       }
     }
-    
-    
 
     return (
       <div className='productViewBodyContainer'>

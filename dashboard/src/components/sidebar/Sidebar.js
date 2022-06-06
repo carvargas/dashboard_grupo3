@@ -50,12 +50,14 @@ const Sidebar = () => {
               Reiniciar Productos          
             </li>
           </Link>
-          
+          <div className='oscuro-container'>
+        <div className="oscuro">
           <li onClick={cambiarModo}>            
               <i className="fa-solid fa-moon"></i>
                 Modo oscuro
             </li>
-            
+            </div>
+            </div>
         </ul>
       </div>
       <div className='profile-container'>
@@ -68,6 +70,5 @@ const Sidebar = () => {
     </div>
   )
 }
-
 
 export default Sidebar
