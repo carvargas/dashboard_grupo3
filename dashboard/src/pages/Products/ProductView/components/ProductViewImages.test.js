@@ -169,26 +169,6 @@ describe('Pruebas en el componente <ProductViewImages />', ()=>{
 
         });
 
-        test('Se renderiza la nueva imagen agregada', () => {
-
-            //guardo el valor de la galeria antes de quitar la imagen
-            const oldGallery = values.gallery;
-
-            //agrego una imagen
-            const input = screen.getByLabelText("Nueva imagen", {selector: "input"});
-
-            userEvent.clear(input);
-            userEvent.type(input, "OTRA NUEVA IMAGEN");
-            userEvent.tab();
-
-            //obtengo la nueva galeria
-            const newGallery = values.gallery;
-
-            //se renderiza la nueva imagen (???)
-            const images = screen.getAllByRole("img");
-
-        }); 
-        
         test('Se puede quitar una imagen', () => {
 
             if(values.gallery.length !== 0){
@@ -211,7 +191,6 @@ describe('Pruebas en el componente <ProductViewImages />', ()=>{
 
                 //se guarda el valor de la galeria despues de quitar la imagen
                 const newGallery = values.gallery; //imgs
-                console.log(newGallery);
 
                 //ya no esta la imagen en la galeria
                 expect(newGallery).toHaveLength(oldGallery.length - 1);

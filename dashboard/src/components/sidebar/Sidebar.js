@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   const {menu, setMenu } = useContext(appContext)
-  console.log(menu, setMenu)
   const menulRef = useOnClickOutside( () => setMenu(false))
 
   const handleReiniciarProductos = () => {

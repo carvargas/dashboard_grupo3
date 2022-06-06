@@ -26,7 +26,6 @@
       "react-app/jest"
     ]
   },
-  
   "browserslist": {
     "production": [
       ">0.2%",
@@ -40,6 +39,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.17.12",
+    "@babel/preset-react": "^7.17.12",
     "@testing-library/react-hooks": "^8.0.0"
   }
 }

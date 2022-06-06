@@ -196,7 +196,6 @@ describe('Teseando <ProductViewHeader/>', () => {
                     <ProductViewHeader/>
                 </BrowserRouter>
             )
-            screen.debug();
         });
 
         test('se renderiza un mensaje de productos no encontrados', () => {

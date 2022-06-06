@@ -107,7 +107,6 @@ describe('Teseando <ProductView/>', () => {
                     <ProductView/>
                 </BrowserRouter>
             )
-            screen.debug();
         });
 
         test('se renderiza un mensaje de productos no encontrados', () => {

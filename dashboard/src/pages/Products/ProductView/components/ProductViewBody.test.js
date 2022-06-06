@@ -96,7 +96,6 @@ const handleSaveProducts = () => {
           "Content-type": "application/json"
         }
       });
-      console.log("producto agregado");
 
     }else{
       
@@ -109,8 +108,6 @@ const handleSaveProducts = () => {
         }
       })
 
-      console.log("producto actualizado");
-      
     }
 }
 
@@ -141,14 +138,12 @@ describe('Testeando <ProductViewBody/>', () => {
 
         //guardo el viejo nombre del producto        
         const oldPoductName = product.nombre;
-        console.log(oldPoductName);
         //cambio el nombre del producto
         const botonGuardar = screen.getByRole('button', {name: 'Guardar'});
         botonGuardar.click();
 
         //guardo el nuevo nombre del producto
         const newProductName = product.nombre;
-        console.log(newProductName);
         
     });
 
