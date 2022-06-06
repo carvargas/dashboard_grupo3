@@ -41,22 +41,27 @@ let products = [
     }
 ];
 let isLoading = false;
+let product = null;
 
 describe('Teseando ProductViewHeader', () => { 
 
-    describe('test si es el header de un nuevo producto', () => { 
+    describe('testeando el header de un nuevo producto', () => { 
         
         beforeEach(() => {
-            useProductListFetch.mockReturnValueOnce([products, isLoading]);
+            useProductListFetch.mockReturnValue([products, isLoading]);
     
             global.window = Object.create(window);
-            const url = "http://localhost:3030/products/new";
+            const url = "localhost:3030/products/new";
             Object.defineProperty(window, "location", {
                 value: {
                    pathname: url
                 },
                 writable: true
             });
+
+            if(!isLoading){
+                product = products.find(product => parseInt(product._id) === parseInt(window.location.pathname.split('/')[2]));
+            }
     
             render(
                 <BrowserRouter>
@@ -65,25 +70,39 @@ describe('Teseando ProductViewHeader', () => {
             )
         });
 
-        test('should first', () => { 
-            expect(true).toBe(true);
+        test('se renderiza un nav con 3 li: producto, >, #producto', () => {
+            const nav = screen.getByRole('navigation');
+            expect(nav).toBeInTheDocument();
+
+            const lis = nav.querySelectorAll('li');
+            expect(lis).toHaveLength(3);
+            lis.forEach(li => {
+                expect(li).toBeInTheDocument();
+            });
+            expect(lis[0]).toHaveTextContent('Productos');
+            const productsLength = products.length;
+            expect(lis[2]).toHaveTextContent(`#${productsLength+1}`);
         });
 
     });
 
-    describe('test si es el header de un producto', () => { 
+    describe('testeando el header de un producto', () => { 
        
         beforeEach(() => {
             useProductListFetch.mockReturnValueOnce([products, isLoading]);
     
             global.window = Object.create(window);
-            const url = "http://localhost:3030/products/3";
+            const url = "localhost:3030/products/3";
             Object.defineProperty(window, "location", {
                 value: {
                    pathname: url
                 },
                 writable: true
             });
+
+            if(!isLoading){
+                product = products.find(product => parseInt(product._id) === parseInt(window.location.pathname.split('/')[2]));
+            }
     
             render(
                 <BrowserRouter>
@@ -92,10 +111,87 @@ describe('Teseando ProductViewHeader', () => {
             )
         });
 
-        test('true', () => { 
-            expect(true).toBe(true);
+        test('se renderiza un nav con 3 li: producto, >, #producto', () => {
+            const nav = screen.getByRole('navigation');
+            expect(nav).toBeInTheDocument();
+
+            const lis = nav.querySelectorAll('li');
+            expect(lis).toHaveLength(3);
+            lis.forEach(li => {
+                expect(li).toBeInTheDocument();
+            });
+            expect(lis[0]).toHaveTextContent('Productos');
+            expect(lis[2]).toHaveTextContent(`#${product._id}`);
         });
-        
+
+    });
+
+    describe('testeando el header de un producto cuando esta cargando', () => { 
+       
+        beforeEach(() => {
+            isLoading = true;
+            useProductListFetch.mockReturnValueOnce([products, isLoading]);
+    
+            global.window = Object.create(window);
+            const url = "localhost:3030/products/3";
+            Object.defineProperty(window, "location", {
+                value: {
+                   pathname: url
+                },
+                writable: true
+            });
+
+            if(!isLoading){
+                product = products.find(product => parseInt(product._id) === parseInt(window.location.pathname.split('/')[2]));
+            }
+    
+            render(
+                <BrowserRouter>
+                    <ProductViewHeader/>
+                </BrowserRouter>
+            )
+        });
+
+        test('se renderiza un cargando cuando aun no cargan los productos', () => {
+            const divCargando = screen.getByTestId('cargando');
+            expect(divCargando).toBeInTheDocument();
+        });
+
+    });
+
+    describe('testeando el header de un producto cuando no hay productos', () => { 
+       
+        beforeEach(() => {
+            products = [];
+            isLoading = false;
+            useProductListFetch.mockReturnValueOnce([products, isLoading]);
+    
+            global.window = Object.create(window);
+            const url = "localhost:3030/products/3";
+            Object.defineProperty(window, "location", {
+                value: {
+                   pathname: url
+                },
+                writable: true
+            });
+
+            if(!isLoading){
+                product = products.find(product => parseInt(product._id) === parseInt(window.location.pathname.split('/')[2]));
+            }
+    
+            render(
+                <BrowserRouter>
+                    <ProductViewHeader/>
+                </BrowserRouter>
+            )
+            screen.debug();
+        });
+
+        test('se renderiza un mensaje de productos no encontrados', () => {
+            const mensajeNoEncontrado = screen.getByText('No se encontro el producto');
+            expect(mensajeNoEncontrado).toBeInTheDocument();
+        });
+
     });
     
 });
