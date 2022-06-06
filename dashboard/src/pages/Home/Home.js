@@ -2,15 +2,18 @@
 import { Link } from "react-router-dom";
 import { HomeItem, HomeButton } from "./HomeComponents";
 import "./Home.css";
+import useProductListFetch from "../../hooks/useProductListFetch";
 
 const Home = () => {
+  const [products] = useProductListFetch();
+  console.log(products);
   return (
     <div className="home-container">
       <HomeItem>
         <section>
           <i className="fa-solid fa-box"></i>
           <p>
-            <b>14</b> Productos
+            <b>{products ? products.length : "..."}</b> Productos
           </p>
         </section>
         <div>

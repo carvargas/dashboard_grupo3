@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Error from "./Error";
 import { BrowserRouter } from "react-router-dom";
@@ -22,7 +22,10 @@ describe("pruebas en el componente <Error />", () => {
     const style = window.getComputedStyle(btnVolver);
     expect(style.background).toBe("rgb(73, 79, 81)");
 
-    userEvent.hover(btnVolver);
+    userEvent.click(btnVolver);
+
+    const newStyle = window.getComputedStyle(btnVolver);
+    expect(newStyle.background).toBe("rgb(12, 176, 147)");
 
     /* expect(btnVolver).toHaveStyle("background: rgb(12, 176, 147)"); */
     // expect(style.background).not.toBe("rgb(73, 79, 81)");
