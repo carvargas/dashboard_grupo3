@@ -20,7 +20,7 @@ const Error = () => {
           </p>
         </div>
       </div>
-      <Link style={{ textDecoration: "none" }} to="/">
+      <Link data-testid='inicio' style={{ textDecoration: "none" }} to="/">
         <HomeButton className="btn-index">Volver al Inicio</HomeButton>
       </Link>
     </div>

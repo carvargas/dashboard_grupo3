@@ -21,7 +21,7 @@ describe('Pruebas en el componente <Sidebar />', ()=>{
 
     test('Se renderizan los li', ()=>{
         const listItems = screen.getAllByRole("listitem");
-        expect(listItems.length).toBe(3);
+        expect(listItems.length).toBe(4);
     })
 
     test('Boton de inicio contiene el texto inicio y redirige correctamente', () =>{

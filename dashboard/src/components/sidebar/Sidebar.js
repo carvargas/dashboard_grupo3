@@ -8,12 +8,8 @@ import { Link } from 'react-router-dom'
 
 
 const Sidebar = () => {
-<<<<<<< HEAD
   const {menu, setMenu, cambiarModo } = useContext(appContext)
 
-=======
-  const {menu, setMenu } = useContext(appContext)
->>>>>>> testing
   const menulRef = useOnClickOutside( () => setMenu(false))
 
   const handleReiniciarProductos = () => {
@@ -52,21 +48,16 @@ const Sidebar = () => {
             <Link to={'/'}>
               <i className="fa-solid fa-box"></i>
               Reiniciar Productos          
-<<<<<<< HEAD
-            </li>
-          </Link>
-          <div className='oscuro-container'>
-        <div className="oscuro">
-          <li onClick={cambiarModo}>            
-              <i className="fa-solid fa-moon"></i>
-                Modo oscuro
-            </li>
-            </div>
-            </div>
-=======
             </Link>
           </li>
->>>>>>> testing
+          <div className='oscuro-container'>
+            <div className="oscuro">
+              <li onClick={cambiarModo}>            
+                <i className="fa-solid fa-moon"></i>
+                Modo oscuro
+              </li>
+            </div>
+          </div>
         </ul>
       </div>
       <div className='profile-container'>

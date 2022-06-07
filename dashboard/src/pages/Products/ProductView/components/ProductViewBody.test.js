@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import ProductViewBody from './ProductViewBody';
 //mocks
 import useProductListFetch from '../../../../hooks/useProductListFetch';
+import userEvent from '@testing-library/user-event';
 jest.mock('../../../../hooks/useProductListFetch');
 
 let products = [
@@ -140,11 +141,11 @@ describe('Testeando <ProductViewBody/>', () => {
         const oldPoductName = product.nombre;
         //cambio el nombre del producto
         const botonGuardar = screen.getByRole('button', {name: 'Guardar'});
-        botonGuardar.click();
+        userEvent.click(botonGuardar);
 
         //guardo el nuevo nombre del producto
         const newProductName = product.nombre;
-        
+        // expect(oldPoductName).not.toBe(newProductName);
     });
 
 
