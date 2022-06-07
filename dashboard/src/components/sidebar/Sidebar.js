@@ -8,8 +8,12 @@ import { Link } from 'react-router-dom'
 
 
 const Sidebar = () => {
+<<<<<<< HEAD
   const {menu, setMenu, cambiarModo } = useContext(appContext)
 
+=======
+  const {menu, setMenu } = useContext(appContext)
+>>>>>>> testing
   const menulRef = useOnClickOutside( () => setMenu(false))
 
   const handleReiniciarProductos = () => {
@@ -32,22 +36,23 @@ const Sidebar = () => {
       </div>
       <div className='menu-container'>
         <ul className='menu-list'>
-          <Link to={'/'}>
-            <li>            
+          <li>            
+            <Link to={'/'}>
               <i className="fa-solid fa-house"></i>
-                Inicio
-            </li>
-          </Link>
-          <Link to={'/products'}>
-            <li>            
+              Inicio
+            </Link>
+          </li>
+          <li>            
+            <Link to={'/products'}>
               <i className="fa-solid fa-box"></i>
               Productos
-            </li>
-          </Link>
-          <Link to={'/'}>
-            <li onClick={handleReiniciarProductos}>            
+            </Link>
+          </li>
+          <li onClick={handleReiniciarProductos}>            
+            <Link to={'/'}>
               <i className="fa-solid fa-box"></i>
               Reiniciar Productos          
+<<<<<<< HEAD
             </li>
           </Link>
           <div className='oscuro-container'>
@@ -58,6 +63,10 @@ const Sidebar = () => {
             </li>
             </div>
             </div>
+=======
+            </Link>
+          </li>
+>>>>>>> testing
         </ul>
       </div>
       <div className='profile-container'>

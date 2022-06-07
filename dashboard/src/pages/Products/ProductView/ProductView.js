@@ -18,7 +18,7 @@ const ProductView = () => {
       { !isLoading && product ?
         <ProductViewBody product={product}/> 
         : 
-        <div className="cargandoProductos">
+        <div className="cargandoProductos" data-testid='cargando'>
           <div className="spinner"> 
             <div className="bounce1"></div>
             <div className="bounce2"></div>

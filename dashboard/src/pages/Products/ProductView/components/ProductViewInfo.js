@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 
 const ProductViewInfo = (props) => {
 
-  const { values, handleChange } = props.product;  
+  const { values, handleChange } = props.product;
   
   const [stock, setStock] = useState(values.stock);
-  const sumStock = () => {
+  const sumStock = (e) => {
+    e.preventDefault();
     setStock(stock + 1);
   }
-  const subStock = () => {
+  const subStock = (e) => {
+    e.preventDefault();
     if(stock > 0) setStock(stock - 1);
   }
   useEffect(() => {
@@ -19,32 +21,53 @@ const ProductViewInfo = (props) => {
     <div className='productViewInfoContainer'>
 
       <h3>Información</h3>
-      <form>
+      <form name='form'>
         
-        <label>Nombre</label>
-        <input type="text" placeholder='InputValue' name='nombre' onChange={handleChange} autoComplete='off' defaultValue={values.nombre} ></input>
+        <label id='nombre'>Nombre</label>
+        <input  type="text" 
+                placeholder='InputValue' 
+                aria-labelledby='nombre' 
+                name='nombre' 
+                onChange={handleChange} 
+                autoComplete='off' 
+                defaultValue={values.nombre}
+        />
         
-        <label>Valor</label>
-        <input type="text" placeholder='InputValue' name='puntos' onChange={handleChange} autoComplete='off' defaultValue={values.puntos} ></input>
+        <label id='puntos'>Valor</label>
+        <input  type="text" 
+                placeholder='InputValue' 
+                aria-labelledby='puntos' 
+                name='puntos' 
+                onChange={handleChange} 
+                autoComplete='off' 
+                defaultValue={values.puntos} 
+        />
         
-        <label>Stock</label>
+        <label id='stock'>Stock</label>
         <div className="agregar-quitar">
-          <p className="quitarprod" onClick={subStock}><i className="fa-solid fa-minus"></i></p>
-            <input type="text" 
+          <button className="quitarprod" onClick={subStock}><i className="fa-solid fa-minus"></i></button>
+            <input type="text"
+                   aria-labelledby='stock'
                    name='stock' 
                    value={stock}
                    className='inputStock'  
                    onChange={handleChange}
                    disabled
             />
-          <p className="agregarprod" onClick={sumStock}><i className="fa-solid fa-plus"></i></p>
+          <button className="agregarprod" onClick={sumStock}><i className="fa-solid fa-plus"></i></button>
         </div>
         
-        <label>Descripcion</label>
-        <textarea rows="5" placeholder='InputValue' name='description' onChange={handleChange} defaultValue={values.description} ></textarea>
+        <label id='desc'>Descripcion</label>
+        <textarea rows="5" 
+                  placeholder='InputValue' 
+                  aria-labelledby='desc'
+                  name='description' 
+                  onChange={handleChange} 
+                  defaultValue={values.description} 
+        />
         
-        <label>Tienda</label>
-        <select>
+        <label id='tienda'>Tienda</label>
+        <select aria-labelledby='tienda'>
             <option hidden>--selecciona--</option>
             <option value="olivia">Olivia</option>
         </select>
